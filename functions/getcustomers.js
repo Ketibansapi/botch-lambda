@@ -19,7 +19,7 @@ exports.handler = function(event, context, callback){
   }
 
   // Perform API call
-  const getUsers = () => {
+  const getCustomers = () => {
     axios.get(URL)
       .then(res => send(res.data))
       .catch(err => send(err));
@@ -28,6 +28,6 @@ exports.handler = function(event, context, callback){
   // Make sure method is GET
   if(event.httpMethod == 'GET') {
     // Run
-    getUsers();
+    getCustomers();
   }
 }
