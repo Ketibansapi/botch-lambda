@@ -18,14 +18,14 @@ exports.handler = function(event, context, callback){
     });
   }
 
-  // Perform API call
+  // Perform API calls that listen to axios serve
   const getCustomers = () => {
     axios.get(URL)
       .then(res => send(res.data))
       .catch(err => send(err));
   }
 
-  // Make sure method is GET
+  // Using GET method to get all the customers
   if(event.httpMethod == 'GET') {
     // Run
     getCustomers();
